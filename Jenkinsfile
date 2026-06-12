@@ -18,21 +18,5 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
-            steps {
-                echo 'Deploying application...'
-                // Example: deploy artifact
-                sh 'scp target/myapp.jar user@server:/opt/apps/'
-            }
-        }
-    }
-
-    post {
-        success {
-            echo 'Pipeline completed successfully!'
-        }
-        failure {
-            echo 'Pipeline failed!'
-        }
     }
 }
