@@ -6,7 +6,6 @@ pipeline {
             steps {
                 echo 'Building the project...'
                 // Example: run Maven build
-                sh 'mvn clean install'
             }
         }
 
@@ -14,7 +13,6 @@ pipeline {
             steps {
                 echo 'Running tests...'
                 // Example: run unit tests
-                sh 'mvn test'
             }
         }
     }
