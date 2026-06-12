@@ -1,21 +1,23 @@
-pipeline {
-    agent any
+// CHANGE THIS:
+stage('Build') {
+    steps {
+        echo 'Building the project...'
+        sh 'your-build-command-here' // Delete or change this line
+    }
+}
 
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building the project...'
-                // Example: run Maven build
-                sh 'mvn clean install'
-            }
-        }
+// TO THIS (If using Windows Batch):
+stage('Build') {
+    steps {
+        echo 'Building the project...'
+        bat 'your-build-command-here' 
+    }
+}
 
-        stage('Test') {
-            steps {
-                echo 'Running tests...'
-                // Example: run unit tests
-                sh 'mvn test'
-            }
-        }
+// OR TO THIS (If using PowerShell):
+stage('Build') {
+    steps {
+        echo 'Building the project...'
+        powershell 'your-build-command-here'
     }
 }
